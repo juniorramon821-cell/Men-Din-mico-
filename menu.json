@@ -1,0 +1,32 @@
+[
+    {
+        "id": "inicio",
+        "nombre": "Inicio",
+        "enlace": "#inicio",
+        "icono": "⌂"
+    },
+    {
+        "id": "servicios",
+        "nombre": "Servicios",
+        "enlace": "#servicios",
+        "icono": "▣"
+    },
+    {
+        "id": "cuentas",
+        "nombre": "Cuentas",
+        "enlace": "#cuentas",
+        "icono": "▤"
+    },
+    {
+        "id": "prestamos",
+        "nombre": "Préstamos",
+        "enlace": "#prestamos",
+        "icono": "↗"
+    },
+    {
+        "id": "contacto",
+        "nombre": "Contacto",
+        "enlace": "#contacto",
+        "icono": "✉"
+    }
+]

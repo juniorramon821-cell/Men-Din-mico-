@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<!-- Define que el documento utiliza HTML5 -->
+<html lang="es">
+<head>
+    <!-- Configuración general de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Banco RamónRD - Menú Dinámico</title>
+
+    <!-- Conecta los estilos CSS -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- Carga el código JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Encabezado del banco -->
+    <header class="encabezado">
+        <div class="marca">
+            <span class="logo">R</span>
+
+            <div>
+                <h1>Banco RamónRD</h1>
+                <p>Tu futuro financiero comienza aquí</p>
+            </div>
+        </div>
+
+        <!-- Botón para dispositivos móviles -->
+        <button
+            id="botonMovil"
+            class="boton-movil"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menuPrincipal">
+            ☰ Menú
+        </button>
+    </header>
+
+    <!-- Navegación dinámica -->
+    <nav class="navegacion" aria-label="Navegación principal">
+        <ul id="menuPrincipal" class="menu-principal">
+            <!-- JavaScript insertará las opciones -->
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <!-- Bienvenida -->
+        <section id="inicio" class="bienvenida">
+            <h2>Menú dinámico</h2>
+            <p>
+                Administra las opciones de navegación de Banco RamónRD.
+                Agrega, edita o elimina las opciones del menú.
+            </p>
+        </section>
+
+        <!-- Formulario para administrar opciones -->
+        <section class="panel">
+            <h2 id="tituloFormulario">Administrar menú</h2>
+
+            <form id="formularioMenu">
+                <input type="hidden" id="idEdicion">
+
+                <label for="nombre">Nombre de la opción</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    maxlength="40"
+                    required
+                    placeholder="Ejemplo: Servicios">
+
+                <label for="enlace">Enlace</label>
+                <input
+                    type="text"
+                    id="enlace"
+                    maxlength="200"
+                    required
+                    placeholder="Ejemplo: #servicios">
+
+                <label for="icono">Icono o símbolo</label>
+                <input
+                    type="text"
+                    id="icono"
+                    maxlength="5"
+                    placeholder="Ejemplo: ★">
+
+                <div class="acciones-formulario">
+                    <button type="submit" id="botonGuardar">
+                        Agregar opción
+                    </button>
+
+                    <button
+                        type="button"
+                        id="botonCancelar"
+                        class="boton-secundario"
+                        hidden>
+                        Cancelar edición
+                    </button>
+                </div>
+            </form>
+
+            <p id="mensaje" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Tabla administrativa -->
+        <section class="panel">
+            <h2>Opciones registradas</h2>
+
+            <p class="ayuda">
+                Los cambios se reflejan inmediatamente en el menú.
+                Puedes exportar los datos para conservarlos en JSON.
+            </p>
+
+            <!-- Controles para importar y exportar JSON -->
+            <div class="acciones-formulario acciones-json">
+                <button type="button" id="botonExportar">
+                    Exportar JSON
+                </button>
+
+                <button
+                    type="button"
+                    id="botonImportar"
+                    class="boton-secundario">
+                    Importar JSON
+                </button>
+
+                <button
+                    type="button"
+                    id="botonRestaurar"
+                    class="boton-secundario">
+                    Restaurar menú inicial
+                </button>
+
+                <input
+                    type="file"
+                    id="archivoJSON"
+                    accept=".json,application/json"
+                    hidden>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Enlace</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaOpciones">
+                        <!-- JavaScript generará las filas -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Información de la opción seleccionada -->
+        <section id="contenidoSeleccionado" class="panel">
+            <h2 id="tituloSeleccionado">Bienvenido</h2>
+
+            <p id="detalleSeleccionado">
+                Selecciona una opción del menú para navegar.
+            </p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        <p>
+            Banco RamónRD | Proyecto académico de menú dinámico con JSON
+        </p>
+    </footer>
+</body>
+</html>
